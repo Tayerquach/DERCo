@@ -82,22 +82,6 @@ def run_ica(epochs: Epochs, fit_params: dict = None) -> ICA:
     ica_epochs = epochs.copy()
     ica.fit(ica_epochs, decim=settings["ica"]["decim"])
 
-    # The Fp1 and Fp2 electrodes are above the eyes, and F7 and F8 are close enough to the sides of the eyes to detect horizontal movements. 
-    # We use Fp1 and F8 (we only need one channel each for blinks and horizontal movements).
-    # if "eog" not in epochs.get_channel_types():
-    #     if "Fp1" and "F8" in epochs.get_montage().ch_names:
-    #         eog_channels = ["Fp1", "F8"]
-    #     else:
-    #         eog_channels = epochs.get_montage().ch_names[:2]
-    #     logger.info(
-    #         "EOG channels are not found. Attempting to use "
-    #         f'{",".join(eog_channels)} channels as EOG channels.'
-    #     )
-    #     ica_epochs.set_channel_types({ch: "eog" for ch in eog_channels})
-
-    # eog_indices, _ = ica.find_bads_eog(ica_epochs)
-    # ica.exclude = eog_indices
-
     return ica
 
 
@@ -258,14 +242,5 @@ def interpolate_bad_channels(epochs: Epochs, bads: list) -> Epochs:
         epochs_interpolated = epochs.copy()
 
     epochs_interpolated.info["bads"] = bads
-
-    # if bads:
-    #     bads_str = ", ".join(bads)
-    #     description = f", interpolated: {bads_str}"
-    #     epochs_interpolated.info.update(
-    #         description=epochs.info["description"] + description
-    #     )
-
     epochs_interpolated.interpolate_bads(reset_bads=True)
-    # epochs_interpolated.info.update(temp=f'{epochs.info["temp"]}_ransac')
     return epochs_interpolated
