@@ -21,6 +21,7 @@ matplotlib==3.8.2
 mne==1.6.0
 mne-icalabel==0.5.1
 msgpack==1.0.7
+numexpr==2.8.8
 numpy==1.26.2
 packaging==23.2
 pandas==2.1.4
@@ -32,6 +33,7 @@ pymatreader==0.0.32
 pyparsing==3.1.1
 pyprep==0.4.3
 python-dateutil==2.8.2
+python-picard==0.7
 pytz==2023.3.post1
 regex==2023.12.25
 requests==2.31.0
