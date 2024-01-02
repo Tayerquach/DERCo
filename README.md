@@ -67,14 +67,14 @@ Project Organization
     │   ├── article_2_human_performance.csv      <- The results of next-word prediction task from article 2.
     │   ├── article_3_human_performance.csv      <- The results of next-word prediction task from article 3.
     │   └── article_4_human_performance.csv      <- The results of next-word prediction task from article 4.
-    ├── utils                   <- contains many functions to preprocess the EEG data.\
-    │   ├── config.py           <- contains many settings for ICA, filter and processing epochs.\
-    │   ├── helper.py           <- contains frequently used functions dealing with array.\
-    │   ├── preprocessing.py    <- contains functions that can be used to clean EEG/MEG data using MNE-Python.\
-    │   ├── raw.py              <- contains frequently used functions dealing with raw data (creating, filtering, ...).\
-    │   └── epochs.py           <- contains several functions to generate epochs (from triggers, events, object ...).\
-    ├── requirements.txt        <- The requirements file for reproducing the analysis environment, e.g.\
-    │                         generated with `pip freeze > requirements.txt`\
+    ├── utils                   <- contains many functions to preprocess the EEG data.
+    │   ├── config.py           <- contains many settings for ICA, filter and processing epochs.
+    │   ├── helper.py           <- contains frequently used functions dealing with array.
+    │   ├── preprocessing.py    <- contains functions that can be used to clean EEG/MEG data using MNE-Python.
+    │   ├── raw.py              <- contains frequently used functions dealing with raw data (creating, filtering, ...).
+    │   └── epochs.py           <- contains several functions to generate epochs (from triggers, events, object ...).
+    ├── requirements.txt        <- The requirements file for reproducing the analysis environment, e.g.
+    │                         generated with `pip freeze > requirements.txt`.
     └── run_preprocessing.py    <- the main function to create the preprocessed epochs from raw epochs.
 
 --------
