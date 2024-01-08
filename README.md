@@ -17,7 +17,6 @@ The objective of this pipeline is to conduct a preprocessing EEG signals prior t
     <li><strong>word</strong> (string): the simuli</li>
     <li><strong>NumberOfLetters</strong> (integer): the number of characters in a stimulus</li>
     <li><strong>WordFrequency</strong> (integer): return the word frequency on a human-friendly logarithmic scale.</li>
-    <li><strong>WordFrequency</strong> (integer): return the word frequency on a human-friendly logarithmic scale.</li>
     <li><strong>Orthographic Distance & Bigram Frequency</strong> (integer): 
     <div class="alert alert-block alert-info">
     <b>Orthographic distance</b> was defined as the average Levenshtein distance of the 20 most orthographically similar words <a href="https://link.springer.com/article/10.3758/PBR.15.5.971">Yarkoni, Balota, & Yap, 2008</a>, where Levenshtein distance is the minimum number of letter substitutions, deletions, additions, or transpositions required to transform one word into another. <br>
