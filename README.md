@@ -9,7 +9,7 @@ The objective of this pipeline is to conduct a preprocessing EEG signals prior t
     Actually, the raw epochs had been applied this filter
     High-frequency artefacts and slow drifts are removed with a zero-phase bandpass filter using mne-Python. The cutoff frequencies (0.5 - 45 Hz) can be modified in the utils folder in the configuration file (<em>config.py</em>). Using a notch filter at 50Hz to remove AC line current noise. <br>
     <b>Step 3: Get EEG channels and set montage</b> <br>
-    HEOG was removed from the raw epochs. The EEG electrodes were positioned via the montage setup.
+    HEOG was removed from the raw epochs. The EEG electrodes were positioned via the montage setup. <br>
     <b>Step 4: Re-reference</b> <br>
     We used common average referencing (CAR) to generate a more ideal reference electrode for EEG recordings.
     <b>Step 5: Create metadata</b> <br>
