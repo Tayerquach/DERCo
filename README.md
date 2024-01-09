@@ -11,23 +11,9 @@ The objective of this pipeline is to conduct a preprocessing EEG signals prior t
     <b>Step 3: Get EEG channels and set montage</b> <br>
     HEOG was removed from the raw epochs. The EEG electrodes were positioned via the montage setup. <br>
     <b>Step 4: Re-reference</b> <br>
-    We used common average referencing (CAR) to generate a more ideal reference electrode for EEG recordings.
+    We used common average referencing (CAR) to generate a more ideal reference electrode for EEG recordings. <br>
     <b>Step 5: Create metadata</b> <br>
-    The <strong>metadata</strong> includes:
-    <li><strong>word</strong> (string): the simuli</li>
-    <li><strong>NumberOfLetters</strong> (integer): the number of characters in a stimulus</li>
-    <li><strong>WordFrequency</strong> (integer): return the word frequency on a human-friendly logarithmic scale.</li>
-    <li><strong>Orthographic Distance & Bigram Frequency</strong> (integer): 
-    <div class="alert alert-block alert-info">
-    <b>Orthographic distance</b> was defined as the average Levenshtein distance of the 20 most orthographically similar words <a href="https://link.springer.com/article/10.3758/PBR.15.5.971">Yarkoni, Balota, & Yap, 2008</a>, where Levenshtein distance is the minimum number of letter substitutions, deletions, additions, or transpositions required to transform one word into another. <br>
-    <b>Bigram Frequency</b> (<a href="https://link.springer.com/article/10.3758/BF03193014">Balota et al,, 2007</a>) refers to summed bigram frequencies by position, and is based on bigram frequencies that are sensitive to positions within words. Position-sensitive bigram counts take into account the letter positions where a bigram occurs. For example, the bigram frequency for DO in DOG counts DO bigrams only when they appear in the first two positions of a word.<br>
-    <b>Tool:</b> Using https://elexicon.wustl.edu/
-</div>
-</li>
-<li><strong>ConsonantVowelProportion</strong> (integer): calculated by dividing the number of consonants in a word by the number of letters.</li>
-<li><strong>WordID</strong> (string): identifies the position of words in the respective topic.</li>
-<li><strong>PredictionRate</strong> (integer): the percentages of prediction based on human performances</li>
-<li><strong>Prediction</strong> (boolean): True if the predicted word matched with the correct word and versa.</li>
+    Please refer to https://osf.io/rkqbu/wiki/Schema/ to get more information.
     <b>Step 6: Run Preprocessing </b> <br>
         <li>Preliminar rejection </li>
             Epochs are rejected based on a global threshold on the z-score (> 3) of the epoch variance and amplitude range.
