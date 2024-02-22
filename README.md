@@ -1,7 +1,7 @@
 # DERCo: A Dataset for Human Behaviour in Reading Comprehension Using EEG
 # [![Python][Python.py]][Python-url]
 ## Overview
-The objective of this pipeline is to conduct a preprocessing EEG signals for DERCo dataset prior to statistical analysis. However, this pipeline is also suitable to apply for many EEG-based experiments. We only need to change parameters requiring for our own experiments in the `config.py` file. The most significant function of this pipeline is to reduce the need for manual interventions in data cleaning through visual inspection. For example, when using ICA to decompose the data into a set of components, we must observe them to find out which components containing artefacts such as eye blinks, muscle movements, heart rate, etc. Then these components will be get rid of the data, and the remaining components will be reconstructed into "clean data". However, with this pipeline, this procedure is automatically implemented.
+The objective of this pipeline is to conduct preprocessing on EEG signals for the DERCo dataset prior to statistical analysis. However, this pipeline is also suitable for application in many EEG-based experiments. We only need to change parameters required for our own experiments in the `config.py file`. The most significant function of this pipeline is to reduce the need for manual interventions in data cleaning through visual inspection. For example, when using ICA to decompose the data into a set of components, we must observe them to identify components containing artifacts such as eye blinks, muscle movements, heart rate, etc. These components will then be removed from the data, and the remaining components will be reconstructed into "clean data". However, with this pipeline, this procedure is automatically implemented.
 
 ## Description
 The next section describes and explains the structure of the preprocessing pipeline. The DERCo dataset will be used in this pipeline. It is recommended to review the raw epochs before generating the preprocessed file. The dataset is available on the Open Science Framework (OSF) at https://osf.io/rkqbu/.
@@ -71,7 +71,8 @@ pip3 install -r requirements.txt
 ``` 
 
 ## Dataset
-This preprocessing pipeline was used to generate the DERCo dataset. To download this dataset, please go to this [link](https://osf.io/rkqbu/). For further details about schema and the structure of DERCo dataset, please refer to this [paper]().
+This preprocessing pipeline was used to generate the DERCo dataset. To download this dataset, please go to this [link](https://osf.io/rkqbu/). Download `EEG_data` folder and put it into the directory with the same level as `article`. Note that although `preprocessed` folder was published, we can download `raw` folder only and run this pipeline. The results then can are validated by the available `preprocessed` files in OSF.
+For further details about schema and the structure of DERCo dataset, please refer to this [paper]().
 ## Run Preprocessing
 After downloading the DERCo dataset, to create `preprocessed_epoch.fif` for each article per participant, we can run the code below.
 ```console 
