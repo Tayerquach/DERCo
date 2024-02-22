@@ -63,16 +63,16 @@ Project Organization
 
 --------
 
-# Environment Setup
+## Environment Setup
 1. Install Python (<a target="_blank" href="https://wiki.python.org/moin/BeginnersGuide">Setup instruction</a>)
 2. Install Python packages
 ```console 
 pip3 install -r requirements.txt 
 ``` 
 
-# Dataset
+## Dataset
 This preprocessing pipeline was used to generate the DERCo dataset. To download this dataset, please go to this [link](https://osf.io/rkqbu/). For further details about schema and the structure of DERCo dataset, please refer to this [paper]().
-# Run Preprocessing
+## Run Preprocessing
 After downloading the DERCo dataset, to create `preprocessed_epoch.fif` for each article per participant, we can run the code below.
 ```console 
 python3 run_preprocessing.py -subject_id=[subject_id] -topic_id=[topic_id]
@@ -83,7 +83,21 @@ python3 run_preprocessing.py -subject_id=ACB71 -topic_id=0
 ```
 In this example, the preprocessing pipeline was applied to clean the raw epoch data of the first article for participant ACB71.
 
-# References
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## References
 [1] A. Gramfort, M. Luessi, E. Larson, D. Engemann, D. Strohmeier, C. Brodbeck, R. Goj, M. Jas, T. Brooks, L. Parkkonen, M. Hämäläinen, MEG and EEG data analysis with MNE-Python, Frontiers in Neuroscience, Volume 7, 2013, ISSN 1662-453X.
 
 [2] Mainak Jas, Denis Engemann, Federico Raimondo, Yousra Bekhti, and Alexandre Gramfort, “Automated rejection and repair of bad trials in MEG/EEG.” In 6th International Workshop on Pattern Recognition in Neuroimaging (PRNI), 2016.
