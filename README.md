@@ -64,8 +64,14 @@ Project Organization
 --------
 
 ## Environment Setup
-1. Install Python (<a target="_blank" href="https://wiki.python.org/moin/BeginnersGuide">Setup instruction</a>)
-2. Install Python packages
+After cloning repository github, going to the DERCo folder and do the steps as follows
+
+1. If you have not installed Python, please install it first:
+
+   Install Python (<a target="_blank" href="https://wiki.python.org/moin/BeginnersGuide">Setup instruction</a>).
+   
+   **Note**: In this project, we used Python 3.10.9
+3. Install Python packages
 ```console 
 pip3 install -r requirements.txt 
 ``` 
