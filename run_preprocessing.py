@@ -49,21 +49,20 @@ if __name__ == '__main__':
     '''
     Import raw epochs
     '''
-
-    # Save output file
+    # Import raw data
     data_path = 'EEG_data'
-    type_folder = 'raw'
+    input_folder = 'raw'
     topic_folder = 'article_' + str(topic_id)
     file_name = 'raw_epoch.fif'
-    subject_folder = Path(data_path) / type_folder / subject_id / topic_folder 
-    raw_fname = os.path.join(subject_folder, file_name)
+    subject_input_folder = Path(data_path) / input_folder / subject_id / topic_folder 
+    raw_fname = os.path.join(subject_input_folder, file_name)
     raw_epochs = mne.read_epochs(raw_fname)
 
     '''
         Get EEG channels and set montage
     '''
     # Remove EOG channels
-    raw_epochs.drop_channels(['HEOG'])
+    # raw_epochs.drop_channels(['HEOG'])
     # raw_data.drop_channels(['HEOG', 'VEOG'])
     # Set montage
     montage = mne.channels.make_standard_montage('standard_1020') # Electrode position file
@@ -170,10 +169,17 @@ if __name__ == '__main__':
     new_cleaned_metadata = preprocessed_epochs.metadata.drop('index', axis=1)
     preprocessed_epochs = EpochsArray(epochs_data, info=preprocessed_epochs.info, events=events_data_new.astype('int'), event_id=event_id_new, tmin=tmin, metadata = new_cleaned_metadata)
 
-
     # Save output file
+    data_path = 'EEG_data'
+    output_folder = 'preprocessed'
+    topic_folder = 'article_' + str(topic_id)
     file_cleaned_name = 'preprocessed_epoch.fif'
-    cleaned_fname = os.path.join(subject_folder, file_cleaned_name)
+    subject_output_folder = Path(data_path) / output_folder / subject_id / topic_folder
+    # Check if the folder exists, if not create it
+    if not os.path.exists(subject_output_folder):
+        os.makedirs(subject_output_folder)
+
+    cleaned_fname = os.path.join(subject_output_folder, file_cleaned_name)
     preprocessed_epochs.save(cleaned_fname, overwrite=True)
 
     
