@@ -77,7 +77,7 @@ pip3 install -r requirements.txt
 ``` 
 
 ## Dataset
-This preprocessing pipeline was used to generate the DERCo dataset. To download this dataset, please go to this [link](https://osf.io/rkqbu/). Download `EEG_data` folder and put it into the DERCo directory with the same level as `article`. Note that although `preprocessed` folder was published with both `raw_epoch.fif` and `preprocessed_epoch.fif` , we can download `raw_epoch.fif` files only and then run this pipeline. After that, the results can are validated by the corresponding available `preprocessed_epoch.fif` files in OSF.
+This preprocessing pipeline was used to generate the DERCo dataset. To download this dataset, please go to this [link](https://osf.io/rkqbu/). Download `EEG_data` folder and put it into the DERCo directory with the same level as `article`. All **raw data** from each subject was stored in `raw` folder. We can download `raw_epoch.fif` files only and then run this pipeline. After that, the results can are validated by the corresponding available `preprocessed_epoch.fif` files in `preprocessed` folders.
 For further details about schema and the structure of DERCo dataset, please refer to this [paper]().
 ## Run Preprocessing
 After downloading the DERCo dataset, to create `preprocessed_epoch.fif` for each article per participant, we can run the code below.
