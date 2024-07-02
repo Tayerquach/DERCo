@@ -71,7 +71,16 @@ After cloning repository github, going to the DERCo folder and do the steps as f
    Install Python (<a target="_blank" href="https://wiki.python.org/moin/BeginnersGuide">Setup instruction</a>).
    
    **Note**: In this project, we used Python 3.10.9
-3. Install Python packages
+2. Install Conda (<a target="_blank" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">Conda Installation</a>) or similar environment systems
+3. Create a virtual enviroment
+```console 
+conda create --name [name of env] python==[version]
+```
+Example:
+```console 
+conda create --name test python==3.10.9
+```
+4. Install Python packages
 ```console 
 pip3 install -r requirements.txt 
 ``` 
