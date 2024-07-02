@@ -1,0 +1,9 @@
+torch==2.1.2
+numpy==1.26.2
+mne==1.4.2
+pyprep==0.4.3
+autoreject==0.4.2
+pandas==1.5.3
+mne-icalabel==0.4
+wordfreq==3.1.1
+python-picard==0.7
