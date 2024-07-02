@@ -80,7 +80,7 @@ Example:
 ```console 
 conda create --name test python==3.10.9
 ```
-4 Check list of conda environments
+4. Check list of conda environments
 ```console 
 conda env list
 ```
