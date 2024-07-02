@@ -80,7 +80,15 @@ Example:
 ```console 
 conda create --name test python==3.10.9
 ```
-4. Install Python packages
+4 Check list of conda environments
+```console 
+conda env list
+```
+5. Activate enviroment
+```console 
+conda activate [name of env]
+``` 
+6. Install Python packages
 ```console 
 pip3 install -r requirements.txt 
 ``` 
