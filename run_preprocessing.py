@@ -105,7 +105,6 @@ if __name__ == '__main__':
 
     metadata['HumanResponse'] = ['', ''] + list(human_perf['response'].values)
     metadata['WordID'] = ['', ''] + list(human_perf['word_id'].values)
-    metadata['PredictionRate'] = [np.nan, np.nan] + list(human_perf['percentage'].values)
     metadata['p_cloze'] = [np.nan, np.nan] + list(human_perf['p_cloze'].values)
     metadata['level'] = [np.nan, np.nan] + list(human_perf['level'].values)
     metadata = metadata.drop(columns=['HumanResponse'])
