@@ -112,7 +112,7 @@ if __name__ == '__main__':
     # Replace '#' with NaN in BigramFrequency
     metadata['BigramFrequency'] = metadata['BigramFrequency'].replace('#', np.nan)
     # Replace the first two values with NaN in Prediction
-    metadata['Prediction'].iloc[:2] = np.nan
+    # metadata['Prediction'].iloc[:2] = np.nan
     # Reorder columns
     column_order = ['WordID', 'word', 'NumberOfLetters', 'WordFrequency', 'OrthographicDistance', 'BigramFrequency', 'ConsonantVowelProportion', 'p_cloze', 'level']
     metadata = metadata[column_order]
