@@ -114,7 +114,7 @@ if __name__ == '__main__':
     # Replace the first two values with NaN in Prediction
     metadata['Prediction'].iloc[:2] = np.nan
     # Reorder columns
-    column_order = ['WordID', 'word', 'NumberOfLetters', 'WordFrequency', 'OrthographicDistance', 'BigramFrequency', 'ConsonantVowelProportion', 'Prediction', 'p_cloze', 'level']
+    column_order = ['WordID', 'word', 'NumberOfLetters', 'WordFrequency', 'OrthographicDistance', 'BigramFrequency', 'ConsonantVowelProportion', 'p_cloze', 'level']
     metadata = metadata[column_order]
     # Reset the index and move it to a regular column
     metadata.reset_index(inplace=True)
