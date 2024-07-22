@@ -106,7 +106,8 @@ if __name__ == '__main__':
     metadata['HumanResponse'] = ['', ''] + list(human_perf['response'].values)
     metadata['WordID'] = ['', ''] + list(human_perf['word_id'].values)
     metadata['PredictionRate'] = [np.nan, np.nan] + list(human_perf['percentage'].values)
-    metadata['Prediction'] = metadata['WORD'] == metadata['HumanResponse']
+    metadata['p_cloze'] = [np.nan, np.nan] + list(human_perf['p_cloze'].values)
+    metadata['level'] = [np.nan, np.nan] + list(human_perf['level'].values)
     metadata = metadata.drop(columns=['HumanResponse'])
 
     # Replace '#' with NaN in BigramFrequency
@@ -114,7 +115,7 @@ if __name__ == '__main__':
     # Replace the first two values with NaN in Prediction
     metadata['Prediction'].iloc[:2] = np.nan
     # Reorder columns
-    column_order = ['WordID', 'word', 'NumberOfLetters', 'WordFrequency', 'OrthographicDistance', 'BigramFrequency', 'ConsonantVowelProportion', 'Prediction', 'PredictionRate']
+    column_order = ['WordID', 'word', 'NumberOfLetters', 'WordFrequency', 'OrthographicDistance', 'BigramFrequency', 'ConsonantVowelProportion', 'Prediction', 'p_cloze', 'level']
     metadata = metadata[column_order]
     # Reset the index and move it to a regular column
     metadata.reset_index(inplace=True)
