@@ -116,8 +116,8 @@ if __name__ == '__main__':
     # Reorder columns
     column_order = ['WordID', 'word', 'NumberOfLetters', 'WordFrequency', 'OrthographicDistance', 'BigramFrequency', 'ConsonantVowelProportion', 'p_cloze', 'level']
     metadata = metadata[column_order]
-    # Reset the index and remove it
-    metadata.reset_index(inplace=False)
+    # Reset the index and move it to a regular column
+    metadata.reset_index(inplace=True)
     custom_epochs.metadata = metadata
 
     '''
