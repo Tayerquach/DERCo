@@ -45,7 +45,7 @@ Project Organization
 --------
 
 ## Reproduction
-![flowchart](reports/figures/leaf_project_procedure.png)
+![flowchart](figure_4.jpg)
 
 ## Environment Setup
 After cloning repository github, going to the DERCo folder and do the steps as follows
