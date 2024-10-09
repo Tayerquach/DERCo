@@ -8,6 +8,7 @@ The next section describes and explains the structure of the preprocessing pipel
 
 ## Citation
 (Updating...)
+**Link to the paper**: https://www.nature.com/articles/s41597-024-03915-8
 
 The goal of this project is to generate the preprocessed EEG data in the DERCo dataset. The project has two main stages as follows.
 * [Reproduction](#reproduction)
