@@ -5,9 +5,31 @@ The objective of this pipeline is to conduct preprocessing on EEG signals for th
 
 ## Description
 The next section describes and explains the structure of the preprocessing pipeline. The DERCo dataset will be used in this pipeline. It is recommended to review the raw epochs before generating the preprocessed file. The dataset is available on the Open Science Framework (OSF) at https://osf.io/rkqbu/.
+    
+    
+</div>
 
 ## Citation
-(Updating...)
+@article{quach2024derco,
+
+  title={DERCo: A Dataset for Human Behaviour in Reading Comprehension Using EEG},
+  
+  author={Quach, Boi Mai and Gurrin, Cathal and Healy, Graham},
+  
+  journal={Scientific Data},
+  
+  volume={11},
+  
+  number={1},
+  
+  pages={1104},
+  
+  year={2024},
+  
+  publisher={Nature Publishing Group UK London}
+  
+}
+
 **Link to the paper**: https://www.nature.com/articles/s41597-024-03915-8
 
 The goal of this project is to generate the preprocessed EEG data in the DERCo dataset. The project has two main stages as follows.
@@ -48,6 +70,26 @@ Project Organization
 ## Reproduction
 ![flowchart](figure_4.jpg)
 
+<div class="alert alert-block alert-info">
+    <b>Step 1: Import raw data </b> <br>
+    EEG raw epoch data will be read via the MNE-Python [1] library. <br>
+    <b>Step 2: Temporal filtering </b> <br>
+    Actually, the raw epochs had been applied this filter
+    High-frequency artefacts and slow drifts are removed with a zero-phase bandpass filter using mne-Python. The cutoff frequencies (0.1 - 45 Hz) can be modified in the utils folder in the configuration file (<em>config.py</em>). Using a notch filter at 50Hz to remove AC line current noise. <br>
+    <b>Step 3: Get EEG channels and set montage</b> <br>
+    HEOG was removed from the raw epochs. The EEG electrodes were positioned via the montage setup. <br>
+    <b>Step 4: Re-reference</b> <br>
+    We used common average referencing (CAR) to generate a more ideal reference electrode for EEG recordings. <br>
+    <b>Step 5: Create metadata</b> <br>
+    Please refer to https://osf.io/rkqbu/wiki/Schema/ to get more information. <br>
+    <b>Step 6: Run Preprocessing </b> <br>
+        <li>Preliminar rejection </li>
+            Epochs are rejected based on a global threshold on the z-score (> 3) of the epoch variance and amplitude range.
+        <li>Run ICA </li> 
+            The default method is the infomax algorithm, however it can be changed in the configuration file along with the number of components and the decimation parameter. Components containing blink artefacts are automatically marked with mne-Python. Then, the mne-ica label library was used to remove the ICs corresponding to artefacts (eye-blink, muscle, heart rate ...).
+        <li>Autoreject </li>
+            Autoreject [2, 3] uses unsupervised learning to estimate the rejection threshold for the epochs. In order to reduce computation time that increases with the number of segments and channels, autoreject can be fitted on a representative subset of epochs (25% of total epochs). Once the parameters are learned, the solution can be applied to any data that contains channels that were used during fit.<br>
+
 ## Environment Setup
 After cloning repository github, going to the DERCo folder and do the steps as follows
 
@@ -80,7 +122,7 @@ pip3 install -r requirements.txt
 
 ## Dataset
 This preprocessing pipeline was used to generate the DERCo dataset. To download this dataset, please go to this [link](https://osf.io/rkqbu/). Download `EEG_data` folder and put it into the DERCo directory with the same level as `article`. All **raw data** from each subject was stored in `raw` folder. We can download `raw_epoch.fif` files only and then run this pipeline. After that, the results can are validated by the corresponding available `preprocessed_epoch.fif` files in `preprocessed` folders.
-For further details about schema and the structure of DERCo dataset, please refer to this [paper]().
+For further details about schema and the structure of DERCo dataset, please refer to this [paper](https://www.nature.com/articles/s41597-024-03915-8).
 ## Run Preprocessing
 After downloading the DERCo dataset, to create `preprocessed_epoch.fif` for each article per participant, we can run the code below.
 ```console 
