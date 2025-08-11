@@ -10,6 +10,7 @@ The next section describes and explains the structure of the preprocessing pipel
 </div>
 
 ## Citation
+```console
 @article{quach2024derco,
 
   title={DERCo: A Dataset for Human Behaviour in Reading Comprehension Using EEG},
@@ -29,6 +30,7 @@ The next section describes and explains the structure of the preprocessing pipel
   publisher={Nature Publishing Group UK London}
   
 }
+```
 
 **Link to the paper**: https://www.nature.com/articles/s41597-024-03915-8
 
